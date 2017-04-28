@@ -1,0 +1,12 @@
+{
+	"fileVersion": 1,
+	"versions": {
+		"denjin": {"path":"external/denjin"},
+		"derelict-glfw3": "3.1.2",
+		"derelict-util": "2.0.6",
+		"erupted": "1.5.2",
+		"wayland-client-d": "1.8.90",
+		"xcb-d": "2.1.0+1.11.1",
+		"xlib-d": "0.1.1"
+	}
+}
