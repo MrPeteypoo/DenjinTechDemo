@@ -1,3 +1,6 @@
 [submodule "external/denjin"]
 	path = external/denjin
 	url = https://github.com/storm20200/Denjin.git
+[submodule "external/glfw"]
+	path = external/glfw
+	url = https://github.com/glfw/glfw.git
