@@ -8,28 +8,15 @@
 
 	"homepage": "https://github.com/storm20200/DenjinTechDemo",
 
-	"targetType": "executable",
 	"targetName": "denjin-tech-demo",
-	"targetPath": "builds/unsupported",
+	"targetType": "executable",
+	"targetPath": "builds",
 
 	"dependencies": {
 		"denjin": {
 			"path":"external/denjin"
 		}
 	},
-
-	"configurations": [
-		{
-			"name": "windows",
-			"platforms": ["windows"],
-			"targetPath": "builds/windows"
-		},
-		{
-			"name": "linux",
-			"platforms": ["linux"],
-			"targetPath": "builds/linux"
-		}
-	],
 
 	"buildRequirements": [
 		"allowWarnings",
@@ -50,5 +37,11 @@
 		"release": {
 			"buildOptions": ["releaseMode", "optimize", "inline", "noBoundsCheck"]
 		}
-	}
+	},
+
+	"copyFiles": ["content/all/shaders"],
+	"copyFiles-linux-x86": ["content/linux-x86/*"],
+	"copyFiles-linux-x86_64": ["content/linux-x86_64/*"],
+	"copyFiles-windows-x86": ["content/win-x86/*"],
+	"copyFiles-windows-x86_64": ["content/win-x86_64/*"]
 }
