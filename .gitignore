@@ -29,3 +29,4 @@ content/all/shaders/testFrag.spv
 content/all/shaders/testFrag.spv.log
 content/all/shaders/testVert.spv
 content/all/shaders/testVert.spv.log
+*.suo

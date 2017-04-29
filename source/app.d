@@ -1,6 +1,9 @@
-import std.stdio;
+import denjin;
 
 void main()
 {
-	writeln("Edit source/app.d to start your project.");
+	auto engine = Engine();
+    scope (exit) engine.clear();
+    engine.initialise();
+    engine.run();
 }
