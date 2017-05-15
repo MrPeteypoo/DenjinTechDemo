@@ -93,7 +93,8 @@ test_script:
  - echo %PATH%
  - '%DC% --version'
  - dub build --build=debug --arch=%Darch% --compiler=%DC%
- - dub build --build=unittest-cov --arch=%Darch% --compiler=%DC%
  - dub build --build=optimized --arch=%Darch% --compiler=%DC%
- - dub build --build=optimized-unittest --arch=%Darch% --compiler=%DC%
  - dub build --build=release --arch=%Darch% --compiler=%DC%
+ - dub build --build=release-nobounds --arch=%Darch% --compiler=%DC%
+ - dub test --build=unittest-cov --arch=%Darch% --compiler=%DC%
+ - dub test --build=unittest-optimized --arch=%Darch% --compiler=%DC%

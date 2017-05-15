@@ -15,6 +15,7 @@ addons:
 
     packages: &native_deps
       - gcc-multilib  # unittest-cov support.
+      - g++-multilib  # Assimp support.
       - cmake         # GLFW.
 
 matrix:
@@ -83,6 +84,8 @@ matrix:
 
   allow_failures:
     - d: gdc
+    - env: ARCH=x86
+      d: dmd-2.072.2
       
   exclude:
     - d: dmd
@@ -94,10 +97,11 @@ install:
 script:
   - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.:./builds/linux
   - dub build --build=debug --arch=$ARCH
-  - dub build --build=unittest-cov --arch=$ARCH
   - dub build --build=optimized --arch=$ARCH
-  - dub build --build=optimized-unittest --arch=$ARCH
   - dub build --build=release --arch=$ARCH
+  - dub build --build=release-nobounds --arch=$ARCH
+  - dub test --build=unittest-cov --arch=$ARCH
+  - dub test --build=unittest-optimized --arch=$ARCH
 
 after_script:
   - dub run doveralls

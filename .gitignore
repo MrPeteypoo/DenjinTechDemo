@@ -32,3 +32,4 @@ content/all/shaders/testVert.spv.log
 *.suo
 *.spv
 *.log
+dub.selections.json
